@@ -21,10 +21,11 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
   * Added README.source explaining the reason for repacking the tarball
   * Removed obsolete README.Debian
   * Bumped Standards-Version to 3.9.3
-  * Dropped debian/image_to_j2k.pod, upstream has a proper manpage now
+  * Dropped debian/image_to_j2k.pod and j2k_to_image.pod, upstream has
+    proper manpages now
   * Updated Build-Dependencies and various small things in d/control
 
- -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 23:39:41 +0100
+ -- David Paleino <dapal@debian.org>  Sun, 11 Mar 2012 00:04:06 +0100
 
 openjpeg (1.3+dfsg-4) unstable; urgency=high
 
