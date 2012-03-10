@@ -9,8 +9,6 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
       settings in debian/rules
   * Add to the packages to fix a lintian warning because we are using
     deb-helper and misc:Depends is a requirment
-  * Fix a crash path in openjpeg that was identified when placing the
-    lib under load
   * Place -dbg package in section debug
   * Bump standards version as we are bringing the package up to latest
     spec
