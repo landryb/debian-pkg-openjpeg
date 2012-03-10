@@ -7,8 +7,7 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
       target
     - Update build patch, to set gcc options for mj2 Makefile based on the
       settings in debian/rules
-  * Add to the packages to fix a lintian warning because we are using
-    deb-helper and misc:Depends is a requirment
+  * Add ${misc:Depends} to binary packages
   * Place -dbg package in section debug
 
   [ David Paleino ]
@@ -23,8 +22,9 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
   * Removed obsolete README.Debian
   * Bumped Standards-Version to 3.9.3
   * Dropped debian/image_to_j2k.pod, upstream has a proper manpage now
+  * Updated Build-Dependencies and various small things in d/control
 
- -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 23:30:39 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 23:39:41 +0100
 
 openjpeg (1.3+dfsg-4) unstable; urgency=high
 

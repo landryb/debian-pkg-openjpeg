@@ -1,9 +1,21 @@
 Source: openjpeg
 Priority: extra
 Maintainer: Debian PhotoTools Maintainers <pkg-phototools-devel@lists.alioth.debian.org>
-Uploaders: Robin Cornelius <robin.cornelius@gmail.com>, David Bremner <bremner@debian.org>
+Uploaders:
+ Robin Cornelius <robin.cornelius@gmail.com>
+ , David Bremner <bremner@debian.org>
+ , David Paleino <dapal@debian.org>
 Homepage: http://www.openjpeg.org
-Build-Depends: debhelper (>= 8), dpatch (>= 2), libtiff4-dev
+Build-Depends:
+ debhelper (>= 8)
+ , autotools-dev
+ , libtiff5-dev
+ , libpng-dev
+ , liblcms2-dev
+ , zlib1g-dev
+ , libfcgi-dev
+ , libcurl4-gnutls-dev
+ , doxygen
 Standards-Version: 3.9.3
 Section: libs
 Vcs-Browser: http://git.debian.org/?p=pkg-phototools/openjpeg.git
@@ -12,7 +24,9 @@ Vcs-Git: git://git.debian.org/git/pkg-phototools/openjpeg.git
 Package: libopenjpeg-dev
 Section: libdevel
 Architecture: any
-Depends: libopenjpeg2 (= ${binary:Version}), ${misc:Depends}
+Depends:
+ libopenjpeg2 (= ${binary:Version})
+ , ${misc:Depends}
 Description: development files for libopenjpeg2, a JPEG 2000 image library
  Libopenjpeg2 is a library for handling the JPEG 2000 image compression format.
  JPEG 2000 is a wavelet-based image compression standard and permits progressive
@@ -21,9 +35,10 @@ Description: development files for libopenjpeg2, a JPEG 2000 image library
  compression than JPEG 1991, and has resilience to errors in the image.
 
 Package: libopenjpeg2
-Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
 Description: JPEG 2000 image compression/decompression library
  Libopenjpeg2 is a library for handling the JPEG 2000 image compression format.
 
@@ -39,11 +54,14 @@ Description: debug symbols for libopenjpeg2, a JPEG 2000 image library
 Package: openjpeg-tools
 Section: graphics
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
 Description: command-line tools using the JPEG 2000 library
  This package provides with command-line tools allowing for conversions between
  several formats and also provides tools for encoding and decoding
  motion-jpeg2000 video formats:
+ .
   - j2k_to_image: decodes j2k, jp2, and jpt files to pgm, ppm, pnm,
                   pgx, and bmp.
   - image_to_j2k: encodes pnm, pgm, pgx, bmp, and ppm files to j2k,
@@ -53,4 +71,3 @@ Description: command-line tools using the JPEG 2000 library
   - mj2_to_frames: convert mj2 video streams to YUV format.
   - wrap_j2k_in_mj2: wrap j2k codestreams into mj2 format.
   - extract-j2k-from_mj2: extract j2k codestreams from the mj2 format.
-
