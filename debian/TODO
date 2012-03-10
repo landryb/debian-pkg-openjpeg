@@ -1,9 +1,6 @@
 TODO for openjpeg:
 ------------------
 
-  * Reintroduce the files /JavaOpenJPEG/java\ sources/org/openJpeg/* to the
-    source package when upstream marks the copyright and licence correctly.
-
   * Build and distribute some of the additional tools including:
     + jpwl/         - JPEG 2000 Wireless tools: encode JPEG2000 files to
                       withstand transmission errors.
