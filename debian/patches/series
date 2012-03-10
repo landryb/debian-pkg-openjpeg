@@ -1,0 +1,5 @@
+00-fix_build_for_debian.patch
+01-use_system_tiff_headers.patch
+02-fix_FTBFS_on_alpha.patch
+03-fix_potential_crash_patch_in_opj_destroy.patch
+04-fix_alpha_encode_and_prevent_buffer_overrun_in_MCT.patch
