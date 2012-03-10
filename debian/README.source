@@ -1,7 +1,8 @@
+OpenJPEG for Debian
+-------------------
 
-This package uses dpatch to manage all modifications to the upstream
-source. Changes are stored in the source package as diffs in
-debian/patches and applied during the build.
+The original tarball has been repacked to remove third-party libraries
+present in thirdparty/. The Debian package has been compiled using
+system-wide libraries instead.
 
-Please see /usr/share/doc/dpatch/README.source(.gz) for a detailed explanation.
-
+ -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 23:20:31 +0100
