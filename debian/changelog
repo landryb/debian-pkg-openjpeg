@@ -10,10 +10,11 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
   * Add to the packages to fix a lintian warning because we are using
     deb-helper and misc:Depends is a requirment
   * Place -dbg package in section debug
-  * Fix alpha channel encode by preventing an overrun in the static MCT
-    tables when processing more than 3 color components. (Closes: #541807)
 
   [ David Paleino ]
+  * New upstream version (Closes: #659226)
+    - fix alpha channel encode by preventing an overrun in the static MCT
+      tables when processing more than 3 color components. (Closes: #541807)
   * Package moved to "3.0 (quilt)" source format
   * Patches converted from dpatch to quilt-format
   * Dropped unapplicable patches with the new sources
