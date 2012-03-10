@@ -21,8 +21,9 @@ openjpeg (1.5.0-1) unstable; urgency=low
   [ David Paleino ]
   * Package moved to "3.0 (quilt)" source format
   * Patches converted from dpatch to quilt-format
+  * Dropped unapplicable patches with the new sources
 
- -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 21:34:38 +0100
+ -- David Paleino <dapal@debian.org>  Sat, 10 Mar 2012 21:39:15 +0100
 
 openjpeg (1.3+dfsg-4) unstable; urgency=high
 
