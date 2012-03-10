@@ -7,9 +7,17 @@
 CURVER := $(shell dpkg-parsechangelog | grep ^Version | awk '{print $$2}' | cut -d- -f1 | cut -d+ -f1)
 
 %:
-	dh $@
+	dh $@ \
+		--with autotools-dev
 
-.PHONY: override_dh_strip
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--enable-debug \
+		--enable-mj2 \
+		--enable-jpwl \
+		--enable-jpip \
+		--enable-jpip-server
+
 override_dh_strip:
 	dh_strip -plibopenjpeg2 --dbg-package=libopenjpeg2-dbg
 
@@ -24,3 +32,7 @@ get-orig-source:
 	tar cf openjpeg_$(CURVER)+ds.orig.tar openjpeg-$(CURVER)/
 	gzip -9 openjpeg_$(CURVER)+ds.orig.tar
 	rm -rf openjpeg-$(CURVER)/ openjpeg_$(CURVER).orig.tar.gz
+
+.PHONY: override_dh_auto_configure \
+	override_dh_strip \
+	get-orig-source
