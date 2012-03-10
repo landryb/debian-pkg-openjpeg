@@ -1,2 +1,2 @@
-00-fix_build_for_debian.patch
+#00-fix_build_for_debian.patch
 03-fix_potential_crash_patch_in_opj_destroy.patch
