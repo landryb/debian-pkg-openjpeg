@@ -92,6 +92,7 @@ License: BSD-2
 
 Files: applications/mj2/meta_out.*
  applications/mj2/mj2_to_metadata.*
+Copyright: © 2002-2004,  Communications and Remote Sensing Laboratory, Universite catholique de Louvain (UCL), Belgium
 Author: Glenn Pearson
 License: PD
  The base code in this file was developed by the author as part of a video archiving
@@ -122,7 +123,6 @@ Files: libopenjpeg/cidx_manager.*
  libopenjpeg/ppix_manager.c
  libopenjpeg/thix_manager.c
  libopenjpeg/tpix_manager.c
- 
 Copyright: © 2002-2011, Communications and Remote Sensing Laboratory, Universite catholique de Louvain (UCL), Belgium
  © 2002-2011, Professor Benoit Macq
  © 2003-2004, Yannick Verschueren

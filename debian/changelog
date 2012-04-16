@@ -1,4 +1,4 @@
-openjpeg (1.5.0-1) UNRELEASED; urgency=low
+openjpeg (1.5.0-1) experimental; urgency=low
 
   [ Robin Cornelius ]
   * Include motion j2k codec in build
@@ -25,7 +25,17 @@ openjpeg (1.5.0-1) UNRELEASED; urgency=low
     proper manpages now
   * Updated Build-Dependencies and various small things in d/control
 
- -- David Paleino <dapal@debian.org>  Sun, 11 Mar 2012 00:04:06 +0100
+  [ Mathieu Malaterre ]
+  * Add myself to uploaders
+  * Switch to cmake buildsystem
+  * Update orig-tar.sh to remove thirdparty/* files
+  * Bump SONAME to 5 as per upstream recommendation
+  * Install JPWL libraries (update *.symbols file)
+  * Import two patches from upstream svn:
+   - Add explicit link to math lib (-lm)
+   - Fix SONAME handling in 1.5.0 (import from 1.5 branch)
+
+ -- Mathieu Malaterre <malat@debian.org>  Mon, 16 Apr 2012 16:01:13 +0200
 
 openjpeg (1.3+dfsg-4) unstable; urgency=high
 
