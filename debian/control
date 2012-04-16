@@ -5,10 +5,11 @@ Uploaders:
  Robin Cornelius <robin.cornelius@gmail.com>
  , David Bremner <bremner@debian.org>
  , David Paleino <dapal@debian.org>
+ , Mathieu Malaterre <malat@debian.org>
 Homepage: http://www.openjpeg.org
 Build-Depends:
  debhelper (>= 8)
- , autotools-dev
+ , cmake
  , libtiff5-dev
  , libpng-dev
  , liblcms2-dev
@@ -25,30 +26,30 @@ Package: libopenjpeg-dev
 Section: libdevel
 Architecture: any
 Depends:
- libopenjpeg2 (= ${binary:Version})
+ libopenjpeg5 (= ${binary:Version})
  , ${misc:Depends}
-Description: development files for libopenjpeg2, a JPEG 2000 image library
- Libopenjpeg2 is a library for handling the JPEG 2000 image compression format.
+Description: development files for OpenJPEG, a JPEG 2000 image library
+ OpenJPEG is a library for handling the JPEG 2000 image compression format.
  JPEG 2000 is a wavelet-based image compression standard and permits progressive
  transmission by pixel and resolution accuracy for progressive downloads of an
  encoded image. It supports lossless and lossy compression, supports higher
  compression than JPEG 1991, and has resilience to errors in the image.
 
-Package: libopenjpeg2
+Package: libopenjpeg5
 Architecture: any
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
 Description: JPEG 2000 image compression/decompression library
- Libopenjpeg2 is a library for handling the JPEG 2000 image compression format.
+ OpenJPEG is a library for handling the JPEG 2000 image compression format.
 
-Package: libopenjpeg2-dbg
+Package: libopenjpeg5-dbg
 Section: debug
 Architecture: any
-Depends: libopenjpeg2 (= ${binary:Version}), ${misc:Depends}
-Description: debug symbols for libopenjpeg2, a JPEG 2000 image library
+Depends: libopenjpeg5 (= ${binary:Version}), ${misc:Depends}
+Description: debug symbols for libopenjpeg5, a JPEG 2000 image library
  This package contains the debug symbols to match the runtime component of the
- libopenjpeg2 library, allowing debugging of a program using libopenjpeg2 to
+ OpenJPEG library, allowing debugging of a program using OpenJPEG to
  access debugging details within the library itself.
 
 Package: openjpeg-tools

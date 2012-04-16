@@ -7,31 +7,29 @@
 CURVER := $(shell dpkg-parsechangelog | grep ^Version | awk '{print $$2}' | cut -d- -f1 | cut -d+ -f1)
 
 %:
-	dh $@ \
-		--with autotools-dev
+	dh $@ --buildsystem=cmake --parallel
+
+CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
+	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
+	-DBUILD_CODEC:BOOL=ON \
+	-DBUILD_JPIP:BOOL=ON \
+	-DBUILD_JPIP_SERVER:BOOL=OFF \
+	-DBUILD_JPWL:BOOL=ON \
+	-DBUILD_MJ2:BOOL=ON \
+	-DBUILD_SHARED_LIBS:BOOL=ON \
+	-DBUILD_TESTING:BOOL=OFF \
+	-DBUILD_THIRDPARTY:BOOL=OFF
 
 override_dh_auto_configure:
-	dh_auto_configure -- \
-		--enable-debug \
-		--enable-mj2 \
-		--enable-jpwl \
-		--enable-jpip \
-		--enable-jpip-server
+	dh_auto_configure -- $(CMAKE_EXTRA_FLAGS)
 
 override_dh_strip:
-	dh_strip -plibopenjpeg2 --dbg-package=libopenjpeg2-dbg
+	dh_strip -plibopenjpeg5 --dbg-package=libopenjpeg5-dbg
 
 get-orig-source:
 	uscan --verbose \
 		--force-download \
-		--download-version $(CURVER) \
-		--rename \
-		--destdir .
-	tar xf openjpeg_$(CURVER).orig.tar.gz
-	rm -rf openjpeg-$(CURVER)/thirdparty/
-	tar cf openjpeg_$(CURVER)+ds.orig.tar openjpeg-$(CURVER)/
-	gzip -9 openjpeg_$(CURVER)+ds.orig.tar
-	rm -rf openjpeg-$(CURVER)/ openjpeg_$(CURVER).orig.tar.gz
+		--download-version $(CURVER)
 
 .PHONY: override_dh_auto_configure \
 	override_dh_strip \

@@ -1,1 +1,2 @@
-#00-fix_build_for_debian.patch
+addmathlib.patch
+fixsoname.patch
