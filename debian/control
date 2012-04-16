@@ -8,8 +8,9 @@ Uploaders:
  , Mathieu Malaterre <malat@debian.org>
 Homepage: http://www.openjpeg.org
 Build-Depends:
- debhelper (>= 8)
+ debhelper (>= 9)
  , cmake
+ , default-jdk
  , libtiff5-dev
  , libpng-dev
  , liblcms2-dev
@@ -37,6 +38,7 @@ Description: development files for OpenJPEG, a JPEG 2000 image library
 
 Package: libopenjpeg5
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}

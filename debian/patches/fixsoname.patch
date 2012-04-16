@@ -2,12 +2,13 @@ Description: SONAME convention was broken upstream
  upstream quickly fix the behavior in the 1.5 branch. Import patch
 Author: Mathieu Malaterre <malat@debian.org>
 Forwarded: http://code.google.com/p/openjpeg/source/detail?r=1625
+ http://code.google.com/p/openjpeg/source/detail?r=1464
 Last-Update: 2012-04-16
 
 Index: openjpeg/CMakeLists.txt
 ===================================================================
---- openjpeg.orig/CMakeLists.txt	2012-04-16 14:52:41.000000000 +0200
-+++ openjpeg/CMakeLists.txt	2012-04-16 14:54:05.000000000 +0200
+--- openjpeg.orig/CMakeLists.txt	2012-04-16 16:28:07.000000000 +0200
++++ openjpeg/CMakeLists.txt	2012-04-16 16:28:09.000000000 +0200
 @@ -34,9 +34,26 @@
    "${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}.${OPENJPEG_VERSION_BUILD}")
  SET(PACKAGE_VERSION
@@ -88,3 +89,16 @@ Index: openjpeg/CMakeLists.txt
 +INSTALL(FILES LICENSE DESTINATION ${OPENJPEG_INSTALL_DOC_DIR})
  
  INCLUDE (CMake/OpenJPEGCPack.cmake)
+Index: openjpeg/libopenjpeg/CMakeLists.txt
+===================================================================
+--- openjpeg.orig/libopenjpeg/CMakeLists.txt	2012-04-16 16:30:40.000000000 +0200
++++ openjpeg/libopenjpeg/CMakeLists.txt	2012-04-16 16:30:48.000000000 +0200
+@@ -55,7 +55,7 @@
+ 
+ # Install includes files
+ INSTALL(FILES openjpeg.h
+-  DESTINATION ${OPENJPEG_INSTALL_INCLUDE_DIR}/${OPENJPEG_INSTALL_SUBDIR} COMPONENT Headers
++  DESTINATION ${OPENJPEG_INSTALL_INCLUDE_DIR} COMPONENT Headers
+ )
+ 
+ # install man page of the library

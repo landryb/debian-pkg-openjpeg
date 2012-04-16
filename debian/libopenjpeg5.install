@@ -1,2 +1,2 @@
-usr/lib/libopenjpeg.so.*
-usr/lib/libopenjpeg_JPWL.so.*
+usr/lib/*/libopenjpeg.so.*
+usr/lib/*/libopenjpeg_JPWL.so.*

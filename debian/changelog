@@ -34,6 +34,7 @@ openjpeg (1.5.0-1) experimental; urgency=low
   * Import two patches from upstream svn:
    - Add explicit link to math lib (-lm)
    - Fix SONAME handling in 1.5.0 (import from 1.5 branch)
+  * Switch to dh(9), make multi-arch. Closes: #663045
 
  -- Mathieu Malaterre <malat@debian.org>  Mon, 16 Apr 2012 16:01:13 +0200
 
