@@ -9,7 +9,7 @@ Uploaders:
 Homepage: http://www.openjpeg.org
 Build-Depends:
  debhelper (>= 9)
- , cmake
+ , cmake, javahelper,
  , default-jdk, libxerces2-java,
  , libtiff5-dev
  , libpng-dev
