@@ -33,6 +33,11 @@ override_dh_strip:
 override_dh_install:
 	dh_install --list-missing
 
+# http://cmake.org/gitweb?p=cmake.git;a=commitdiff;h=a2be068c
+override_dh_auto_install:
+	sed -i -e "s/FATAL_ERROR/STATUS/g" ./obj-*/CMakeFiles/Export/lib/*/openjpeg-1.5/OpenJPEGTargets-relwithdebinfo.cmake
+	dh_auto_install
+
 get-orig-source:
 	uscan --verbose \
 		--force-download \
