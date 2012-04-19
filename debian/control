@@ -10,7 +10,7 @@ Homepage: http://www.openjpeg.org
 Build-Depends:
  debhelper (>= 9)
  , cmake
- , default-jdk
+ , default-jdk, libxerces2-java,
  , libtiff5-dev
  , libpng-dev
  , liblcms2-dev
@@ -62,12 +62,67 @@ Description: debug symbols for libopenjpeg5, a JPEG 2000 image library
  OpenJPEG library, allowing debugging of a program using OpenJPEG to
  access debugging details within the library itself.
 
+Package: openjpip-dec-server
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: tool to allow caching of JPEG 2000 files using JPIP protocol
+ This is client side application for caching remote JPEG 2000 using the JPIP
+ protocol. This command line application needs to run on the client side to
+ allow application such as opj_viewer or opj_viewer_xerces to view images.
+
+Package: openjpip-viewer-xerces
+Section: graphics
+Architecture: any
+Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
+Description: JPEG 2000 java based viewer for advanced remote JPIP access
+ Java based client to view remote JPEG 2000 using JPIP protocol.
+ This is a simple java viewer to allow:
+ .
+  - Scale up request: Enlarge the window
+  - ROI request: Select a region by mouse click and drag, then click inside the
+    red frame of the selected region
+  - Annotate image with ROI information in XML metadata: Click button "Region
+    Of Interest"
+  - Open a new window presenting an aligned image with a locally stored image:
+    Click button "Image Registration" (Under Construction)
+
+Package: openjpip-viewer
+Section: graphics
+Architecture: any
+Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
+Description: JPEG 2000 java based viewer for basic remote JPIP access
+ Java based client to view remote JPEG 2000 using JPIP protocol.
+ This is a simple java viewer to allow:
+ .
+  - Scale up request: Enlarge the window
+  - ROI request: Select a region by mouse click and drag, then click inside the
+    red frame of the selected region
+
+Package: openjpip-server
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: JPIP server for JPEG 2000 files
+ OpenJPIP software is an implementation of JPEG 2000 Part9: Interactivity tools,
+ APIs and protocols (JPIP). For more info about JPIP, check the website:
+ http://www.jpeg.org/jpeg2000/j2kpart9.html. The current implementation uses
+ some results from the 2KAN project (http://www.2kan.org).
+ .
+ First Version 1.0 covers:
+ .
+  - JPT-stream (Tile based) and JPP-stream (Precinct based) media types
+  - Session, channels, cache model managements
+  - JPIP over HTTP
+  - Indexing JPEG 2000 files
+  - Embedding XML formatted metadata
+  - Region Of Interest (ROI) requests
+
+
 Package: openjpeg-tools
 Section: graphics
 Architecture: any
-Depends:
- ${shlibs:Depends}
- , ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: command-line tools using the JPEG 2000 library
  This package provides with command-line tools allowing for conversions between
  several formats and also provides tools for encoding and decoding
