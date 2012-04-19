@@ -1,1 +1,1 @@
-debian/tmp/usr/lib/*/libopenjpegjni.so
+debian/tmp/usr/lib/*/libopenjpegjni.so usr/lib/jni
