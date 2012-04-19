@@ -1,7 +1,7 @@
-Index: openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt
+Index: openjpeg/applications/JavaOpenJPEG/CMakeLists.txt
 ===================================================================
---- openjpeg-1.5.0.orig/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 12:54:35.481899188 +0200
-+++ openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 12:57:20.257452866 +0200
+--- openjpeg.orig/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 13:39:11.000000000 +0200
++++ openjpeg/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 13:44:48.859653460 +0200
 @@ -4,6 +4,9 @@
  SET(openjpegjni_SRCS
    JavaOpenJPEGDecoder.c
@@ -26,7 +26,7 @@ Index: openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt
 +
 +INSTALL(TARGETS openjpegjni
 +  EXPORT OpenJPEGTargets
-+  LIBRARY DESTINATION ${OPENJPEG_INSTALL_JNI_DIR} COMPONENT Libraries
++  LIBRARY DESTINATION ${OPENJPEG_INSTALL_JNI_DIR}/jni COMPONENT Libraries
 +)
  
  # build jar:

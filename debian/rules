@@ -26,6 +26,9 @@ CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(CMAKE_EXTRA_FLAGS)
+	# technically a java module should not need a SONAME, use a trick from python module+cmake
+	# http://lists.debian.org/debian-python/2012/04/msg00059.html
+	sed -i -e 's/ -Wl,-soname,[^ ]\+ / /' obj-*/applications/JavaOpenJPEG/CMakeFiles/openjpegjni.dir/link.txt
 
 override_dh_strip:
 	dh_strip --dbg-package=libopenjpeg5-dbg
