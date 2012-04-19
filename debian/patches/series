@@ -1,2 +1,4 @@
 addmathlib.patch
 fixsoname.patch
+installjava.patch
+relativeincludepath.patch

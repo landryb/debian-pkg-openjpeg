@@ -6,9 +6,10 @@
 
 CURVER := $(shell dpkg-parsechangelog | grep ^Version | awk '{print $$2}' | cut -d- -f1 | cut -d+ -f1)
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+JAVA_HOME=/usr/lib/jvm/default-java
 
 %:
-	dh $@ --buildsystem=cmake --parallel
+	dh $@ --buildsystem=cmake --parallel --with javahelper
 
 CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
@@ -17,6 +18,7 @@ CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 	-DBUILD_JPIP:BOOL=ON \
 	-DBUILD_JPIP_SERVER:BOOL=OFF \
 	-DBUILD_JPWL:BOOL=ON \
+	-DBUILD_JAVA:BOOL=ON \
 	-DBUILD_MJ2:BOOL=ON \
 	-DBUILD_SHARED_LIBS:BOOL=ON \
 	-DBUILD_TESTING:BOOL=OFF \

@@ -1,0 +1,41 @@
+Index: openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt
+===================================================================
+--- openjpeg-1.5.0.orig/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 12:54:35.481899188 +0200
++++ openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 12:57:20.257452866 +0200
+@@ -4,6 +4,9 @@
+ SET(openjpegjni_SRCS
+   JavaOpenJPEGDecoder.c
+   JavaOpenJPEG.c
++  ../codec/index.c
++  ../codec/convert.c
++${OPENJPEG_SOURCE_DIR}/applications/common/opj_getopt.c
+   )
+ 
+ # JNI binding:
+@@ -20,6 +23,18 @@
+ add_library(openjpegjni MODULE
+   ${openjpegjni_SRCS}
+   )
++TARGET_LINK_LIBRARIES(openjpegjni ${OPENJPEG_LIBRARY_NAME})
++
++IF(WIN32)
++  SET(OPENJPEG_INSTALL_JNI_DIR ${OPENJPEG_INSTALL_BIN_DIR})
++ELSE()
++  SET(OPENJPEG_INSTALL_JNI_DIR ${OPENJPEG_INSTALL_LIB_DIR})
++ENDIF()
++
++INSTALL(TARGETS openjpegjni
++  EXPORT OpenJPEGTargets
++  LIBRARY DESTINATION ${OPENJPEG_INSTALL_JNI_DIR} COMPONENT Libraries
++)
+ 
+ # build jar:
+ FIND_PACKAGE(Java 1.5 REQUIRED) # javac, jar
+@@ -45,3 +60,7 @@
+   DEPENDS ${LIBRARY_OUTPUT_PATH}/openjpeg.jar
+   COMMENT "building openjpeg.jar"
+ )
++
++INSTALL(FILES ${LIBRARY_OUTPUT_PATH}/openjpeg.jar
++  DESTINATION ${OPENJPEG_INSTALL_LIB_DIR} COMPONENT JavaModule
++)

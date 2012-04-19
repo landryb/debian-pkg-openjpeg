@@ -45,6 +45,14 @@ Depends:
 Description: JPEG 2000 image compression/decompression library
  OpenJPEG is a library for handling the JPEG 2000 image compression format.
 
+Package: libopenjpeg-java
+Section: java
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${java:Depends}
+Description: java bindings for libopenjpeg, a JPEG 2000 image library
+ This package contains the java binding to match the runtime component of the
+ OpenJPEG library, allowing java program to use OpenJPEG.
+
 Package: libopenjpeg5-dbg
 Section: debug
 Architecture: any

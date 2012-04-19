@@ -1,3 +1,9 @@
+openjpeg (1.5.0-2) UNRELEASED; urgency=low
+
+  * Adding libopenjpeg-java. Closes: #510443
+
+ -- Mathieu Malaterre <malat@debian.org>  Thu, 19 Apr 2012 13:05:06 +0200
+
 openjpeg (1.5.0-1) experimental; urgency=low
 
   [ Robin Cornelius ]
