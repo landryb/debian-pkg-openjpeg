@@ -1,3 +1,8 @@
+Description: missing java installation rules
+Author: Mathieu Malaterre <malat@debian.org>
+Forwarded: http://code.google.com/p/openjpeg/source/detail?r=1636
+Last-Update: 2012-04-20
+
 Index: openjpeg-1.5.0/applications/JavaOpenJPEG/CMakeLists.txt
 ===================================================================
 --- openjpeg-1.5.0.orig/applications/JavaOpenJPEG/CMakeLists.txt	2012-04-19 14:27:17.013900193 +0200

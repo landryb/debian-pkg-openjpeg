@@ -2,3 +2,5 @@ addmathlib.patch
 fixsoname.patch
 relativeincludepath.patch
 installjava.patch
+defaulttmpfile.patch
+addxml2.patch

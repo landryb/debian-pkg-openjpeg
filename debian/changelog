@@ -1,13 +1,18 @@
-openjpeg (1.5.0-2) UNRELEASED; urgency=low
+openjpeg (1.5.0-2) experimental; urgency=low
 
   * Adding libopenjpeg-java. Closes: #510443
+  * Update d/control so that it is easier to backport to stable
   * Provide a fix for cmake commit a2be068c
+  * Provide a symlinks openjpeg.h -> openjpeg-1.5/openjpeg.h for easier
+    transition
   * Add openjpip-server package: openjpip-server
-  * Add openjpip java based clients packages
+   - Add init script
+   - Fix default location of tempfile to be in /tmp
+  * Add openjpip java based clients packages:
    - openjpip-viewer
    - openjpip-viewer-xerces
 
- -- Mathieu Malaterre <malat@debian.org>  Thu, 19 Apr 2012 13:05:06 +0200
+ -- Mathieu Malaterre <malat@debian.org>  Fri, 20 Apr 2012 11:45:07 +0200
 
 openjpeg (1.5.0-1) experimental; urgency=low
 

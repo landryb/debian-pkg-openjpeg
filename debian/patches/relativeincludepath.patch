@@ -1,3 +1,8 @@
+Description: fix relative installation in multiarch system
+Author: Mathieu Malaterre <malat@debian.org>
+Forwarded: http://code.google.com/p/openjpeg/source/detail?r=1630
+Last-Update: 2012-04-20
+
 Index: openjpeg-1.5.0/CMake/OpenJPEGConfig.cmake.in
 ===================================================================
 --- openjpeg-1.5.0.orig/CMake/OpenJPEGConfig.cmake.in	2012-04-19 12:38:27.933915198 +0200

@@ -104,7 +104,7 @@ Description: JPEG 2000 java based viewer for basic remote JPIP access
 Package: openjpip-server
 Section: graphics
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libwww-perl
+Depends: ${shlibs:Depends}, ${misc:Depends}, libwww-perl, apache2.2-bin, spawn-fcgi (>= 1.6.1)
 Description: JPIP server for JPEG 2000 files
  OpenJPIP software is an implementation of JPEG 2000 Part9: Interactivity tools,
  APIs and protocols (JPIP). For more info about JPIP, check the website:
