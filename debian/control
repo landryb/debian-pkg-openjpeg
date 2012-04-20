@@ -10,15 +10,15 @@ Homepage: http://www.openjpeg.org
 Build-Depends:
  debhelper (>= 9)
  , cmake (>= 2.8.0)
- , javahelper (>= 0.40)
+ , javahelper (>= 0.37~)
  , default-jdk
  , libxerces2-java
- , libtiff5-dev
+ , libtiff5-dev | libtiff-dev
  , libpng-dev
  , liblcms2-dev
  , zlib1g-dev
  , libfcgi-dev
- , libcurl4-gnutls-dev
+ , libcurl4-gnutls-dev | libcurl-ssl-dev
  , doxygen
 Standards-Version: 3.9.3
 Section: libs
@@ -104,7 +104,7 @@ Description: JPEG 2000 java based viewer for basic remote JPIP access
 Package: openjpip-server
 Section: graphics
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libwww-perl
 Description: JPIP server for JPEG 2000 files
  OpenJPIP software is an implementation of JPEG 2000 Part9: Interactivity tools,
  APIs and protocols (JPIP). For more info about JPIP, check the website:
