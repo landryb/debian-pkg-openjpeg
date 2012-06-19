@@ -1,3 +1,10 @@
+openjpeg (1.5.0-3) UNRELEASED; urgency=low
+
+  * Add missing jp2-thumbnailer
+  * Mark packages with Multi-Arch: same/foreign
+
+ -- Mathieu Malaterre <malat@debian.org>  Tue, 19 Jun 2012 12:58:26 +0000
+
 openjpeg (1.5.0-2) experimental; urgency=low
 
   * Adding libopenjpeg-java. Closes: #510443
