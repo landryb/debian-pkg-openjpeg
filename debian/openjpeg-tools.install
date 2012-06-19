@@ -9,3 +9,4 @@ usr/bin/extract_j2k_from_mj2
 usr/bin/wrap_j2k_in_mj2
 usr/bin/test_index
 usr/share/man/man1
+debian/jp2-thumbnailer usr/bin
