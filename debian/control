@@ -48,6 +48,10 @@ Depends:
  , ${misc:Depends}
 Description: JPEG 2000 image compression/decompression library
  OpenJPEG is a library for handling the JPEG 2000 image compression format.
+ JPEG 2000 is a wavelet-based image compression standard and permits progressive
+ transmission by pixel and resolution accuracy for progressive downloads of an
+ encoded image. It supports lossless and lossy compression, supports higher
+ compression than JPEG 1991, and has resilience to errors in the image.
 
 Package: libopenjpeg-java
 Section: java
@@ -57,6 +61,9 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, ${java:Depends}
 Description: java bindings for libopenjpeg, a JPEG 2000 image library
  This package contains the java binding to match the runtime component of the
  OpenJPEG library, allowing java program to use OpenJPEG.
+ .
+ This is a Java bindings to the underlying OpenJPEG C implementation. This
+ is not a full Java implementation.
 
 Package: libopenjpeg5-dbg
 Section: debug
@@ -71,7 +78,7 @@ Description: debug symbols for libopenjpeg5, a JPEG 2000 image library
 Package: openjpip-dec-server
 Section: graphics
 Architecture: any
-Multi-Arch: same
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: tool to allow caching of JPEG 2000 files using JPIP protocol
  This is client side application for caching remote JPEG 2000 using the JPIP
@@ -80,7 +87,7 @@ Description: tool to allow caching of JPEG 2000 files using JPIP protocol
 
 Package: openjpip-viewer-xerces
 Section: graphics
-Architecture: any
+Architecture: all
 Multi-Arch: same
 Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
 Description: JPEG 2000 java based viewer for advanced remote JPIP access
@@ -97,7 +104,7 @@ Description: JPEG 2000 java based viewer for advanced remote JPIP access
 
 Package: openjpip-viewer
 Section: graphics
-Architecture: any
+Architecture: all
 Multi-Arch: same
 Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
 Description: JPEG 2000 java based viewer for basic remote JPIP access
@@ -111,7 +118,7 @@ Description: JPEG 2000 java based viewer for basic remote JPIP access
 Package: openjpip-server
 Section: graphics
 Architecture: any
-Multi-Arch: same
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}, libwww-perl, apache2.2-bin, spawn-fcgi (>= 1.6.1)
 Description: JPIP server for JPEG 2000 files
  OpenJPIP software is an implementation of JPEG 2000 Part9: Interactivity tools,
@@ -127,7 +134,6 @@ Description: JPIP server for JPEG 2000 files
   - Indexing JPEG 2000 files
   - Embedding XML formatted metadata
   - Region Of Interest (ROI) requests
-
 
 Package: openjpeg-tools
 Section: graphics
