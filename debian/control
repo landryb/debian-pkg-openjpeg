@@ -3,7 +3,6 @@ Priority: extra
 Maintainer: Debian PhotoTools Maintainers <pkg-phototools-devel@lists.alioth.debian.org>
 Uploaders:
  Robin Cornelius <robin.cornelius@gmail.com>
- , David Bremner <bremner@debian.org>
  , David Paleino <dapal@debian.org>
  , Mathieu Malaterre <malat@debian.org>
 Homepage: http://www.openjpeg.org
