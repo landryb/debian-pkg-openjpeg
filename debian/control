@@ -28,7 +28,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends:
- libopenjpeg5 (= ${binary:Version})
+ libopenjpeg6 (= ${binary:Version})
  , ${misc:Depends}
 Description: development files for OpenJPEG, a JPEG 2000 image library
  OpenJPEG is a library for handling the JPEG 2000 image compression format.
@@ -37,7 +37,7 @@ Description: development files for OpenJPEG, a JPEG 2000 image library
  encoded image. It supports lossless and lossy compression, supports higher
  compression than JPEG 1991, and has resilience to errors in the image.
 
-Package: libopenjpeg5
+Package: libopenjpeg6
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
@@ -51,12 +51,12 @@ Description: JPEG 2000 image compression/decompression library
  encoded image. It supports lossless and lossy compression, supports higher
  compression than JPEG 1991, and has resilience to errors in the image.
 
-Package: libopenjpeg5-dbg
+Package: libopenjpeg6-dbg
 Section: debug
 Architecture: any
 Multi-Arch: same
-Depends: libopenjpeg5 (= ${binary:Version}), ${misc:Depends}
-Description: debug symbols for libopenjpeg5, a JPEG 2000 image library
+Depends: libopenjpeg6 (= ${binary:Version}), ${misc:Depends}
+Description: debug symbols for libopenjpeg6, a JPEG 2000 image library
  This package contains the debug symbols to match the runtime component of the
  OpenJPEG library, allowing debugging of a program using OpenJPEG to
  access debugging details within the library itself.
