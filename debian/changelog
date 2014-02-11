@@ -3,6 +3,8 @@ openjpeg (2.0.0-1) UNRELEASED; urgency=low
   [ Landry Breuil ]
   * Imported Upstream version 2.0.0
   * update watch file from sepwatch [qa]
+  * rename libopenjpeg5 to libopenjpeg6 to track upstream ABI break
+  * disable java subpackage, fails to build
 
  -- Landry Breuil <breuil@craig.fr>  Tue, 11 Feb 2014 14:18:14 +0100
 
