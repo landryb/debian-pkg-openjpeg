@@ -1,5 +1,3 @@
-usr/include/openjpeg-1.5/*.h
-usr/lib/*/libopenjpeg.so
-usr/lib/*/libopenjpeg_JPWL.so
-usr/lib/*/pkgconfig/libopenjpeg1.pc
-usr/lib/*/openjpeg-1.5/*.cmake
+usr/include/openjpeg-2.0/*.h
+usr/lib/*/libopen*.so
+usr/lib/*/openjpeg-2.0/*.cmake
