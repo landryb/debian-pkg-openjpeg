@@ -11,7 +11,6 @@ Build-Depends:
  , cmake (>= 2.8.0)
  , javahelper (>= 0.37~)
  , default-jdk
- , libxerces2-java
  , libtiff5-dev | libtiff-dev
  , libpng-dev
  , liblcms2-dev
@@ -52,18 +51,6 @@ Description: JPEG 2000 image compression/decompression library
  encoded image. It supports lossless and lossy compression, supports higher
  compression than JPEG 1991, and has resilience to errors in the image.
 
-Package: libopenjpeg-java
-Section: java
-Architecture: any
-Multi-Arch: same
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${java:Depends}
-Description: java bindings for libopenjpeg, a JPEG 2000 image library
- This package contains the java binding to match the runtime component of the
- OpenJPEG library, allowing java program to use OpenJPEG.
- .
- This is a Java bindings to the underlying OpenJPEG C implementation. This
- is not a full Java implementation.
-
 Package: libopenjpeg5-dbg
 Section: debug
 Architecture: any
@@ -84,27 +71,9 @@ Description: tool to allow caching of JPEG 2000 files using JPIP protocol
  protocol. This command line application needs to run on the client side to
  allow application such as opj_viewer or opj_viewer_xerces to view images.
 
-Package: openjpip-viewer-xerces
-Section: graphics
-Architecture: all
-Multi-Arch: same
-Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
-Description: JPEG 2000 java based viewer for advanced remote JPIP access
- Java based client to view remote JPEG 2000 using JPIP protocol.
- This is a simple java viewer to allow:
- .
-  - Scale up request: Enlarge the window
-  - ROI request: Select a region by mouse click and drag, then click inside the
-    red frame of the selected region
-  - Annotate image with ROI information in XML metadata: Click button "Region
-    Of Interest"
-  - Open a new window presenting an aligned image with a locally stored image:
-    Click button "Image Registration" (Under Construction)
-
 Package: openjpip-viewer
 Section: graphics
 Architecture: all
-Multi-Arch: same
 Depends: ${misc:Depends}, ${java:Depends}, openjpip-dec-server
 Description: JPEG 2000 java based viewer for basic remote JPIP access
  Java based client to view remote JPEG 2000 using JPIP protocol.

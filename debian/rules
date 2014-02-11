@@ -6,10 +6,9 @@
 
 CURVER := $(shell dpkg-parsechangelog | grep ^Version | awk '{print $$2}' | cut -d- -f1 | cut -d+ -f1)
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-JAVA_HOME=/usr/lib/jvm/default-java
 
 %:
-	dh $@ --buildsystem=cmake --parallel --with javahelper
+	dh $@ --buildsystem=cmake --parallel
 
 CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
@@ -18,7 +17,7 @@ CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 	-DBUILD_JPIP:BOOL=ON \
 	-DBUILD_JPIP_SERVER:BOOL=ON \
 	-DBUILD_JPWL:BOOL=ON \
-	-DBUILD_JAVA:BOOL=ON \
+	-DBUILD_JAVA:BOOL=OFF \
 	-DBUILD_MJ2:BOOL=ON \
 	-DBUILD_SHARED_LIBS:BOOL=ON \
 	-DBUILD_TESTING:BOOL=OFF \
@@ -26,9 +25,6 @@ CMAKE_EXTRA_FLAGS += -DCMAKE_SKIP_RPATH=ON \
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(CMAKE_EXTRA_FLAGS)
-	# technically a java module should not need a SONAME, use a trick from python module+cmake
-	# http://lists.debian.org/debian-python/2012/04/msg00059.html
-	sed -i -e 's/ -Wl,-soname,[^ ]\+ / /' obj-*/applications/JavaOpenJPEG/CMakeFiles/openjpegjni.dir/link.txt
 
 override_dh_strip:
 	dh_strip --dbg-package=libopenjpeg5-dbg
@@ -41,7 +37,6 @@ override_dh_installinit:
 
 # http://cmake.org/gitweb?p=cmake.git;a=commitdiff;h=a2be068c
 override_dh_auto_install:
-	sed -i -e "s/FATAL_ERROR/STATUS/g" ./obj-*/CMakeFiles/Export/lib/*/openjpeg-1.5/OpenJPEGTargets-relwithdebinfo.cmake
 	dh_auto_install
 
 get-orig-source:
