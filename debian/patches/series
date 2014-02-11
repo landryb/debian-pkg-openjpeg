@@ -1,5 +1,5 @@
 #addmathlib.patch
 #relativeincludepath.patch
 #installjava.patch
-defaulttmpfile.patch
-addxml2.patch
+#defaulttmpfile.patch
+#addxml2.patch
